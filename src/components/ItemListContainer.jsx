@@ -1,6 +1,6 @@
 import React from "react";
 import ItemsList from "./ItemsList";
-import SHOP_DATA from "../shopitems-data"
+import SHOP_DATA from "../data/shopitems-data";
 
 
 const ItemListContainer = () =>{

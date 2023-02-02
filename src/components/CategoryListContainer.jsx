@@ -1,5 +1,5 @@
 import CategoryItemList from "./CategoryItemList";
-import CATEGORY_DATA from "../categoryItems-data";
+import CATEGORY_DATA from "../data/categoryItems-data";
 
 const CategoryListContainer =()=>{
       return (
