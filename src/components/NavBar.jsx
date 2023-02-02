@@ -1,7 +1,7 @@
 import React from "react";
 import {useState, useRef, useEffect } from "react";
 import Cart from "./Cart";
-import Crown from "../assets/crown.svg";
+import Logo from "../assets/logo.svg";
 import { motion } from "framer-motion";
 
 const NavBar = () =>{
@@ -23,10 +23,10 @@ const NavBar = () =>{
 
 
     return (
-        <nav className="container flex justify-between px-10 pt-10 pb-5 mx-auto border-b-2 border-black min-w-full md:min-w-max">
-        <div className="nav-logo">
+        <nav className="container flex justify-between items-center px-10 pt-10 pb-5 mx-auto border-b-2 border-black min-w-full md:min-w-max">
+        <div className="translate-x-[-1rem]">
           <a href="/">
-            <img src={Crown} alt="" />
+            <img src={Logo} alt="" />
           </a>
         </div>
         <div className="flex gap-5">
