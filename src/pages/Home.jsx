@@ -5,10 +5,9 @@ const Home = () =>{
 
     return (
         <>
-        <div className="mt-4 flex items-center">
-            <CategoryListContainer />
-        </div>
-            
+            <div className="mt-4 flex items-center">
+                <CategoryListContainer />
+            </div>
         </>
     )
 }
