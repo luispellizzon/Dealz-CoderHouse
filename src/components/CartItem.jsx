@@ -1,7 +1,8 @@
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const CartItem = ({ cartItem }) => {
+const CartItem = ({ cartItem, increase, decrease }) => {
     const { name, price, imageUrl, quantity } = cartItem;
+
   
     return (
       <li className="flex my-3 gap-3 items-center">
@@ -12,11 +13,15 @@ const CartItem = ({ cartItem }) => {
           <h2>{name}</h2>
           <span className="flex items-center"> 
             <div className="flex items-center">
-              <button className="active:scale-75">
-                <FaChevronLeft  />
+              <button className="active:scale-75"
+              onClick={() => decrease(cartItem)}
+              >
+                <FaChevronLeft/>
               </button>
               <p className="text-lg"> {quantity}</p>
-              <button className="active:scale-75" >
+              <button className={quantity === 5 ? "text-gray-400" : "active:scale-75"} 
+              onClick={() => increase(cartItem)}
+              >
                 <FaChevronRight />
               </button>
             </div>

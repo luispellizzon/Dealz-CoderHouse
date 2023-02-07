@@ -3,7 +3,7 @@ import CartItemList from "./CartItemList";
 import { BsBag } from "react-icons/bs";
 import { motion } from "framer-motion";
 
-const Cart = ({cart}) => {
+const Cart = ({cart, increase, decrease}) => {
   const [isOpen, setIsOpen] = useState(false);
   const cartRef = useRef();
 
@@ -38,7 +38,7 @@ const Cart = ({cart}) => {
         animate={{ opacity: 1 }}
         className="absolute h-96 w-[250px] top-10 right-[-32px] z-20 bg-white rounded border-[1px] border-black flex flex-col p-4 items-center space-y-2"
       >
-        <CartItemList cartItems={cart}/>
+        <CartItemList decrease={decrease} increase={increase} cartItems={cart}/>
         <a
           href="/checkout"
           className="w-full px-4 py-2 bg-slate-900 text-amber-50 rounded text-center"
