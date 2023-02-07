@@ -27,7 +27,7 @@ import "swiper/css/navigation";
 
 // SwiperCore.use([Mousewheel]);
 
-const ItemsList = ({ productCategory }) => {
+const ItemsList = ({ productCategory, addOnCart }) => {
   const { title, items } = productCategory;
 
   return (
@@ -72,8 +72,8 @@ const ItemsList = ({ productCategory }) => {
         className="pb-8"
       >
         {items.map((item) => (
-          <SwiperSlide className="flex items-center justify-center px-2 h-full">
-            <Item item={item} />
+          <SwiperSlide key={item.id}  className="flex items-center justify-center px-2 h-full">
+            <Item item={item} addOnCart={addOnCart} />
           </SwiperSlide>
         ))}
       </Swiper>

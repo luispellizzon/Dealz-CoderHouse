@@ -1,9 +1,9 @@
 import ItemListContainer from "../components/ItemListContainer";
 
-const Shop = () =>{
+const Shop = ({addOnCart}) =>{
 
     return (
-        <ItemListContainer />
+        <ItemListContainer addOnCart={addOnCart} />
     )
 
 };

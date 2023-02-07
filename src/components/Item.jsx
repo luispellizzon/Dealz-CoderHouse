@@ -1,5 +1,5 @@
 
-const Item = ({ item }) => {
+const Item = ({ item, addOnCart }) => {
   const { id, name, price, imageUrl } = item;
 
   return (
@@ -9,13 +9,13 @@ const Item = ({ item }) => {
       </div>
       <div className="h-full flex flex-col justify-between text-center">
         <div className="pt-2">
-          <h1 className="mb-2">{name}</h1>
-          <p className="text-md font-bold">{price}€</p>
+          <h1>{name}</h1>
+          <p className="text-lg font-bold">{price}€</p>
         </div>
         <button
           type="button"
           className="w-full bg-slate-900 px-2 py-1 rounded text-amber-50"
-          onClick={()=> console.log('added')}
+          onClick={()=> addOnCart(item)}
         >
           ADD TO CART
         </button>

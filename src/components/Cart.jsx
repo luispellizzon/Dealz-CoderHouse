@@ -2,9 +2,10 @@ import { useState, useEffect, useRef } from "react";
 import { BsBag } from "react-icons/bs";
 
 import { motion } from "framer-motion";
-const Cart = () => {
+const Cart = ({cart}) => {
   const [isOpen, setIsOpen] = useState(false);
   const cartRef = useRef();
+
 
   useEffect(() => {
     const closeDropDown = (e) => {
@@ -19,13 +20,14 @@ const Cart = () => {
   }, []);
 
 
+  const itemsTotal = cart?.length;
 
   return (
     <div ref={cartRef} className="relative cursor-pointer">
       <button onClick={() => setIsOpen((prev) => !prev)}>
         <BsBag className="text-3xl" />
         <div className="absolute top-0 w-full h-full flex items-center">
-          <p className="text-sm font-bold w-full">0</p>
+          <p className="text-sm font-bold w-full">{itemsTotal}</p>
         </div>
       </button>
     </div>
