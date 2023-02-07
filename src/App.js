@@ -8,10 +8,23 @@ import Shop from "./pages/Shop";
 function App() {
   const [cart, setCart] = useState([])
 
-  const addOnCart = (item) =>{
-    setCart([...cart, item])
-  }
+  const addCartItem = (cartItems, productToAdd) =>{
+    const isCartItem = cartItems.find((item) => item.id === productToAdd.id);
+    if (isCartItem) {
+      return cartItems.map((item) =>
+      item.id === productToAdd.id ? { ...item, quantity: item.quantity + 1 } : item
+    );
+    }
+    return [...cartItems, { ...productToAdd, quantity: 1 }];
+  };  
+
+  const addOnCart = (productToAdd) => {
+    setCart(addCartItem(cart, productToAdd));
+  };
+
+
   console.log(cart)
+  
 
   const showHomePage = () =>{
     if (window.location.pathname === "/") {
