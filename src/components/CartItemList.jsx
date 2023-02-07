@@ -1,7 +1,6 @@
 import CartItem from "./CartItem";
 
 const CartItemList = ({cartItems}) => {
-console.log(cartItems[1])
   return (
     <div className="w-full h-72 overflow-scroll">
       <ul>

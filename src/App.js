@@ -6,8 +6,11 @@ import Shop from "./pages/Shop";
 
 
 function App() {
+
+  /* Cart State*/
   const [cart, setCart] = useState([])
 
+  /* Check If Item Already Exist on Cart, If So Increment Quantity or Add NEW Item*/
   const addCartItem = (cartItems, productToAdd) =>{
     const isCartItem = cartItems.find((item) => item.id === productToAdd.id);
     if (isCartItem) {
@@ -15,9 +18,12 @@ function App() {
       item.id === productToAdd.id ? { ...item, quantity: item.quantity + 1 } : item
     );
     }
+
+    /* Return an Array to be added on SetCart*/
     return [...cartItems, { ...productToAdd, quantity: 1 }];
   };  
 
+  /*Function to Add a Product to Cart, But First Check If Item Exist (returning an array) and SET CART*/
   const addOnCart = (productToAdd) => {
     setCart(addCartItem(cart, productToAdd));
   };

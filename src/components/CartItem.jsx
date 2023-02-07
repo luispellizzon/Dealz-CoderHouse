@@ -1,3 +1,5 @@
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
 const CartItem = ({ cartItem }) => {
     const { name, price, imageUrl, quantity } = cartItem;
   
@@ -8,8 +10,17 @@ const CartItem = ({ cartItem }) => {
         </div>
         <div>
           <h2>{name}</h2>
-          <span>
-            {quantity} X {price}€
+          <span className="flex items-center"> 
+            <div className="flex items-center">
+              <button className="active:scale-75">
+                <FaChevronLeft  />
+              </button>
+              <p className="text-lg"> {quantity}</p>
+              <button className="active:scale-75" >
+                <FaChevronRight />
+              </button>
+            </div>
+           X {price}€
           </span>
         </div>
       </li>
