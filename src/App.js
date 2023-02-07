@@ -31,9 +31,9 @@ function App() {
     return [...cartItems, { ...productToAdd, quantity: 1 }];
   };  
 
-  const deleteQuantityFromCart = (cartItems, productToRemove) => {
+  /* Decrement quantity from a product */
+  const deleteQuantityFromItem = (cartItems, productToRemove) => {
     const { quantity } = productToRemove;
-
     if (quantity === 1) {
       const userConfirmation = window.confirm("Would you like to remove this item?");
       if (userConfirmation) {
@@ -54,8 +54,9 @@ function App() {
     setCart(addCartItem(cart, productToAdd));
   };
 
+  /*Function to Decrease Quantity of a Product*/
   const decreaseQuantity = (productToDecrease) =>{
-    setCart(deleteQuantityFromCart(cart, productToDecrease));
+    setCart(deleteQuantityFromItem(cart, productToDecrease));
   }
 
 
