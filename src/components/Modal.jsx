@@ -8,10 +8,6 @@ const {name, price, imageUrl, desc} = showCurrentItem;
     }
   })
 
-  console.log(showCurrentItem)
-
-
-
   return (
     <>
           <div
