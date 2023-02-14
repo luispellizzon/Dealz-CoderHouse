@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
+import Modal from "./components/Modal"
 
 
 function App() {
@@ -59,9 +60,17 @@ function App() {
     setCart(deleteQuantityFromItem(cart, productToDecrease));
   }
 
+  const [showModal, setShowModal] = useState(false);
+  const [showCurrent, setShowCurrent] = useState({});
 
-  console.log(cart)
-  
+  const isModalOpen = () =>{
+    setShowModal((prev) => !prev);
+  }
+
+  const getCurrent = (currentItem) =>{
+    setShowCurrent(currentItem)
+  }
+
 
   const showHomePage = () =>{
     if (window.location.pathname === "/") {
@@ -71,7 +80,7 @@ function App() {
   
   const showShopPage = () =>{
     if (window.location.pathname === "/shop") {
-      return <Shop addOnCart={addOnCart}/>
+      return <Shop addOnCart={addOnCart} isModalOpen={isModalOpen} getCurrent={getCurrent}/>
     }
   }
   
@@ -89,6 +98,7 @@ function App() {
       {showCheckoutPage()}
       {/* /*Waiting for Routes class to implement Shop page */}
       {/* <Shop />  */}
+      {showModal ? <Modal isModalOpen={isModalOpen} showCurrentItem={showCurrent}/> : null}
     </>
    
   );

@@ -1,25 +1,4 @@
 import Item from "./Item";
-
-// const ItemsList =({productCategory})=>{
-//     return (
-//         /*List for Each Category*/
-//         <div className="mt-2 mb-5 border-2 border-black">
-//             {/*Each Title From Each Category*/}
-//             <div className="font-bold">
-//                 <h1>{productCategory.title}</h1>
-//             </div>
-
-//             {/*Each Item From Each Category*/}
-//             {productCategory.items.map((product)=>(
-//                 <Item key={product.id} item={product}/>
-//             ))}
-//         </div>
-        
-//     )
-// }
-
-// export default ItemsList;
-
 import SwiperCore, { Navigation, A11y, Mousewheel } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -27,7 +6,7 @@ import "swiper/css/navigation";
 
 // SwiperCore.use([Mousewheel]);
 
-const ItemsList = ({ productCategory, addOnCart }) => {
+const ItemsList = ({ productCategory, addOnCart, isModalOpen, getCurrent }) => {
   const { title, items } = productCategory;
 
   return (
@@ -73,7 +52,11 @@ const ItemsList = ({ productCategory, addOnCart }) => {
       >
         {items.map((item) => (
           <SwiperSlide key={item.id}  className="flex items-center justify-center px-2 h-full">
-            <Item item={item} addOnCart={addOnCart} />
+            <Item 
+            item={item} 
+            addOnCart={addOnCart} 
+            isModalOpen={isModalOpen}
+            getCurrent={getCurrent} />
           </SwiperSlide>
         ))}
       </Swiper>

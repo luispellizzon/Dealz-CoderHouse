@@ -1,9 +1,9 @@
 import ItemListContainer from "../components/ItemListContainer";
 
-const Shop = ({addOnCart}) =>{
+const Shop = ({addOnCart, isModalOpen, getCurrent}) =>{
 
     return (
-        <ItemListContainer addOnCart={addOnCart} />
+        <ItemListContainer addOnCart={addOnCart} isModalOpen={isModalOpen} getCurrent={getCurrent}/>
     )
 
 };

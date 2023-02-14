@@ -1,15 +1,26 @@
+
 import { TbListDetails } from 'react-icons/tb';
 
-const Item = ({ item, addOnCart }) => {
+const Item = ({ item, addOnCart, isModalOpen, getCurrent }) => {
   const { id, name, price, imageUrl } = item;
+
+  const showItem = () => {
+    isModalOpen();
+    getCurrent(item)
+  };
+  
 
   return (
     <div className="rounded flex flex-col h-80" id={id}>
       <div className="w-full min-h-[70%] relative group">
         <img src={imageUrl} alt="" className="w-full h-full rounded-t  " />
         <div className="hidden w-full h-full absolute top-0 left-0 group-hover:flex items-center justify-center group-hover:bg-black group-hover:bg-opacity-60">
-          <button type="button"
-          className="w-[70%] text-lg' bg-amber-50 px-2 py-1 rounded text-slate-900 font-bold active:scale-95 cursor-pointer flex items-center justify-center gap-1"> <TbListDetails className=' font-bold bg-slate-900 text-amber-50 rounded'/> Ver Detalhes
+          <button 
+          className="w-[70%] text-lg' bg-amber-50 p-1 rounded text-slate-900 font-bold active:scale-95 cursor-pointer flex items-center justify-center gap-1"
+          type="button"
+          onClick={() => showItem()} 
+          >
+            <TbListDetails className=' font-bold bg-slate-900 text-amber-50 rounded'/> Ver Detalhes
           </button>     
         </div>
       </div>
