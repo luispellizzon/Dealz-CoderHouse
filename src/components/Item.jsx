@@ -1,3 +1,4 @@
+import { TbListDetails } from 'react-icons/tb';
 
 const Item = ({ item, addOnCart }) => {
   const { id, name, price, imageUrl } = item;
@@ -8,7 +9,8 @@ const Item = ({ item, addOnCart }) => {
         <img src={imageUrl} alt="" className="w-full h-full rounded-t  " />
         <div className="hidden w-full h-full absolute top-0 left-0 group-hover:flex items-center justify-center group-hover:bg-black group-hover:bg-opacity-60">
           <button type="button"
-          className="w-[60%] bg-amber-50 px-2 py-1 rounded text-slate-900 font-bold active:scale-95 cursor-pointer">Ver Detalhes</button>     
+          className="w-[70%] text-lg' bg-amber-50 px-2 py-1 rounded text-slate-900 font-bold active:scale-95 cursor-pointer flex items-center justify-center gap-1"> <TbListDetails className=' font-bold bg-slate-900 text-amber-50 rounded'/> Ver Detalhes
+          </button>     
         </div>
       </div>
       <div className="h-full flex flex-col justify-between text-center">
@@ -29,3 +31,5 @@ const Item = ({ item, addOnCart }) => {
 };
 
 export default Item;
+
+
