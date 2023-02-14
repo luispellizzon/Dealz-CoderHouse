@@ -5,6 +5,7 @@ const SHOP_DATA = [
         {
           id: 1,
           name: 'Brown Brim',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
           price: 25,
           stock:5,
@@ -12,6 +13,7 @@ const SHOP_DATA = [
         {
           id: 2,
           name: 'Blue Beanie',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/ypkgK0X/blue-beanie.png',
           price: 18,
           stock:5,
@@ -19,6 +21,7 @@ const SHOP_DATA = [
         {
           id: 3,
           name: 'Brown Cowboy',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/QdJwgmp/brown-cowboy.png',
           price: 35,
           stock:5,
@@ -26,6 +29,7 @@ const SHOP_DATA = [
         {
           id: 4,
           name: 'Grey Brim',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/RjBLWxB/grey-brim.png',
           price: 25,
           stock:5,
@@ -33,6 +37,7 @@ const SHOP_DATA = [
         {
           id: 5,
           name: 'Green Beanie',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/YTjW3vF/green-beanie.png',
           price: 18,
           stock:5,
@@ -45,6 +50,7 @@ const SHOP_DATA = [
         {
           id: 6,
           name: 'Adidas NMD',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/0s3pdnc/adidas-nmd.png',
           price: 220,
           stock:5,
@@ -52,6 +58,7 @@ const SHOP_DATA = [
         {
           id: 7,
           name: 'Adidas Yeezy',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/dJbG1cT/yeezy.png',
           price: 280,
           stock:5,
@@ -59,6 +66,7 @@ const SHOP_DATA = [
         {
           id: 8,
           name: 'Black Converse',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/bPmVXyP/black-converse.png',
           price: 110,
           stock:5,
@@ -66,6 +74,7 @@ const SHOP_DATA = [
         {
           id: 9,
           name: 'Nike White AirForce',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/1RcFPk0/white-nike-high-tops.png',
           price: 160,
           stock:5,
@@ -73,6 +82,7 @@ const SHOP_DATA = [
         {
           id: 10,
           name: 'Nike Red High Tops',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/QcvzydB/nikes-red.png',
           price: 160,
           stock:5,
@@ -86,6 +96,7 @@ const SHOP_DATA = [
         {
           id: 11,
           name: 'Black Jean Shearling',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/XzcwL5s/black-shearling.png',
           price: 125,
           stock:5,
@@ -93,6 +104,7 @@ const SHOP_DATA = [
         {
           id: 12,
           name: 'Blue Jean Jacket',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/mJS6vz0/blue-jean-jacket.png',
           price: 90,
           stock:5,        
@@ -100,6 +112,7 @@ const SHOP_DATA = [
         {
           id: 13,
           name: 'Grey Jean Jacket',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/N71k1ML/grey-jean-jacket.png',
           price: 90,
           stock:5, 
@@ -107,6 +120,7 @@ const SHOP_DATA = [
         {
           id: 14,
           name: 'Brown Shearling',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/s96FpdP/brown-shearling.png',
           price: 165,
           stock:5,
@@ -114,6 +128,7 @@ const SHOP_DATA = [
         {
           id: 15,
           name: 'Tan Trench',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/M6hHc3F/brown-trench.png',
           price: 185,
           stock:5,
@@ -126,6 +141,7 @@ const SHOP_DATA = [
         {
           id: 16,
           name: 'Blue Tanktop',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/7CQVJNm/blue-tank.png',
           price: 25,
           stock:5,
@@ -133,6 +149,7 @@ const SHOP_DATA = [
         {
           id: 17,
           name: 'Floral Blouse',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/4W2DGKm/floral-blouse.png',
           price: 20,
           stock:5,
@@ -140,6 +157,7 @@ const SHOP_DATA = [
         {
           id: 18,
           name: 'Floral Dress',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/KV18Ysr/floral-skirt.png',
           price: 80,
           stock:5,
@@ -147,6 +165,7 @@ const SHOP_DATA = [
         {
           id: 19,
           name: 'Red Dots Dress',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/N3BN1bh/red-polka-dot-dress.png',
           price: 80,
           stock:5,
@@ -154,6 +173,7 @@ const SHOP_DATA = [
         {
           id: 20,
           name: 'Striped Sweater',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/KmSkMbH/striped-sweater.png',
           price: 45,
           stock:5,
@@ -166,6 +186,7 @@ const SHOP_DATA = [
         {
           id: 21,
           name: 'Camo Down Vest',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/xJS0T3Y/camo-vest.png',
           price: 325,
           stock:5,
@@ -173,6 +194,7 @@ const SHOP_DATA = [
         {
           id: 22,
           name: 'Floral T-shirt',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/qMQ75QZ/floral-shirt.png',
           price: 20,
           stock:5,
@@ -180,6 +202,7 @@ const SHOP_DATA = [
         {
           id: 23,
           name: 'Longsleeve',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/55z32tw/long-sleeve.png',
           price: 25,
           stock:5,
@@ -187,6 +210,7 @@ const SHOP_DATA = [
         {
           id: 24,
           name: 'Pink T-shirt',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/RvwnBL8/pink-shirt.png',
           price: 25,
           stock:5,
@@ -194,6 +218,7 @@ const SHOP_DATA = [
         {
           id: 25,
           name: 'Jean Long Sleeve',
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam asperiores porro omnis nobis itaque dignissimos culpa numquam atque laudantium neque.",
           imageUrl: 'https://i.ibb.co/VpW4x5t/roll-up-jean-shirt.png',
           price: 40,
           stock:5,
