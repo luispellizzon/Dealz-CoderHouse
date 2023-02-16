@@ -10,9 +10,10 @@ import SignIn from "./pages/SignIn";
 import Contact from "./pages/Contact";
 import Modal from "./components/Modal"
 
-const Root = ({cart, decrease, increase}) =>{
+const Root = ({cart, decrease, increase,showModal, isModalOpen, showCurrentItem}) =>{
   return(
     <>
+      {showModal ? <Modal isModalOpen={isModalOpen} showCurrentItem={showCurrentItem} /> : null}
       <NavBar cart={cart} decrease={decrease} increase={increase}/>
       <Outlet />
     </>
@@ -86,9 +87,9 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route path="/" element={<Root cart={cart} decrease={decreaseQuantity} increase={addOnCart}/>}>
+        <Route path="/" element={<Root cart={cart} decrease={decreaseQuantity} increase={addOnCart} showModal={showModal} isModalOpen={isModalOpen} showCurrentItem={showCurrent}/>}>
           <Route index element={<Home />} />
-          <Route  path="/shop" element={<Shop addOnCart={addOnCart} isModalOpen={isModalOpen} getCurrent={getCurrent}/>}>
+          <Route  path="/shop" element={<Shop addOnCart={addOnCart}  isModalOpen={isModalOpen} getCurrent={getCurrent}/>}>
             <Route path=":categoryName" element={<Category products={SHOP_DATA} addOnCart={addOnCart} isModalOpen={isModalOpen} getCurrent={getCurrent}/>} />
           </Route>
           <Route  path="/login" element={<SignIn />} />
