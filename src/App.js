@@ -1,11 +1,22 @@
 import {useState} from "react";
+import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route, Outlet} from "react-router-dom";
 import SHOP_DATA from "./data/shopitems-data";
 import NavBar from "./components/NavBar";
 import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
+import SignIn from "./pages/SignIn";
+import Contact from "./pages/Contact";
 import Modal from "./components/Modal"
 
+const Root = ({cart, decrease, increase}) =>{
+  return(
+    <>
+      <NavBar cart={cart} decrease={decrease} increase={increase}/>
+      <Outlet />
+    </>
+  )
+}
 
 function App() {
 
@@ -71,37 +82,26 @@ function App() {
     setShowCurrent(currentItem)
   }
 
-
-  const showHomePage = () =>{
-    if (window.location.pathname === "/") {
-      return <Home />
-    }
-  }
-  
-  const showShopPage = () =>{
-    if (window.location.pathname === "/shop") {
-      return <Shop addOnCart={addOnCart} isModalOpen={isModalOpen} getCurrent={getCurrent}/>
-    }
-  }
-  
-  const showCheckoutPage = () =>{
-    if (window.location.pathname === "/shop") {
-      return <Checkout />
-    }
-  }
-
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <>
+        <Route path="/" element={<Root cart={cart} decrease={decreaseQuantity} increase={addOnCart}/>}>
+          <Route index element={<Home />} />
+          <Route  path="/shop" element={<Shop addOnCart={addOnCart} isModalOpen={isModalOpen} getCurrent={getCurrent}/>} />
+          <Route  path="/login" element={<SignIn />} />
+          <Route  path="/contact" element={<Contact />} />
+          <Route  path="/checkout" element={<Checkout />} />
+        </Route>
+        </>
+    )
+  )
   return (
     <>
-      <NavBar cart={cart} decrease={decreaseQuantity} increase={addOnCart}/>
-      {showHomePage()}
-      {showShopPage()}
-      {showCheckoutPage()}
-      {/* /*Waiting for Routes class to implement Shop page */}
-      {/* <Shop />  */}
-      {showModal ? <Modal isModalOpen={isModalOpen} showCurrentItem={showCurrent}/> : null}
+    <RouterProvider router={router} />
     </>
    
   );
 }
+
 
 export default App;
