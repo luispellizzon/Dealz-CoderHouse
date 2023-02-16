@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import CartItemList from "./CartItemList";
 import { BsBag } from "react-icons/bs";
 import { motion } from "framer-motion";
@@ -39,12 +40,12 @@ const Cart = ({cart, increase, decrease}) => {
         className="absolute h-96 w-[250px] top-10 right-[-32px] z-20 bg-white rounded border-[1px] border-black flex flex-col p-4 items-center space-y-2"
       >
         <CartItemList decrease={decrease} increase={increase} cartItems={cart}/>
-        <a
-          href="/checkout"
-          className="w-full px-4 py-2 bg-slate-900 text-amber-50 rounded text-center"
+        <Link
+          to="/checkout"
+          className="w-full px-4 py-2 bg-slate-900 text-amber-50 rounded text-center active:scale-95"
         >
           Checkout
-        </a>
+        </Link>
       </motion.div>
     )}
   </div>

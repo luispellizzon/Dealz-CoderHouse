@@ -1,5 +1,5 @@
-import React from "react";
 import {useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Cart from "./Cart";
 import Logo from "../assets/logo.svg";
 import { motion } from "framer-motion";
@@ -34,13 +34,13 @@ const NavBar = ({cart, increase, decrease}) =>{
           <div className="hidden sm:block">
             <ul className="relative overflow-visible flex gap-5 items-center pt-1 text-lg uppercase">
               <li>
-                <a href="/shop">Shop</a>
+                <Link to="/shop">Shop</Link>
               </li>
               <li>
-                <a href="/contact">Contact</a>
+                <Link to="/contact">Contact</Link>
               </li>
               <li>
-                  <a href="/login">Sign In</a>
+                  <Link to="/login">Sign In</Link>
               </li>
             </ul>
           </div>
@@ -67,13 +67,13 @@ const NavBar = ({cart, increase, decrease}) =>{
               >
                 <ul className="flex flex-col space-y-4 py-2 text-center">
                   <li className="border-b-black border-b-[1px] px-4 pb-3 uppercase">
-                    <a href="/shop">Shop</a>
+                    <Link to="/shop">Shop</Link>
                   </li>
                   <li className="border-b-black border-b-[1px] px-4 pb-4 uppercase">
-                    <a href="/contact">Contact</a>
+                    <Link to="/contact">Contact</Link>
                   </li>
                   <li className="px-4 uppercase">
-                      <a href="/login">Sign In</a>
+                      <Link to="/login">Sign In</Link>
                   </li>
                 </ul>
               </motion.div>

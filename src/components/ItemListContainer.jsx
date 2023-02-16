@@ -1,13 +1,13 @@
 import React from "react";
 import ItemsList from "./ItemsList";
-import SHOP_DATA from "../data/shopitems-data";
 
 
-const ItemListContainer = ({addOnCart, isModalOpen, getCurrent}) =>{
+const ItemListContainer = ({products = [], addOnCart, isModalOpen, getCurrent}) =>{
   let itemAdded = 0;
     return(
+      
         <div className="container mx-auto">
-        {SHOP_DATA.map((category) => (
+        {products.map((category) => (
           <ItemsList  
           addOnCart={addOnCart} 
           key={category.title} 
@@ -16,7 +16,7 @@ const ItemListContainer = ({addOnCart, isModalOpen, getCurrent}) =>{
           getCurrent={getCurrent}/>
         ))}
       </div>
-        
+
     )
 }
 

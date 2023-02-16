@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
+import Category from "./pages/Category";
 import SignIn from "./pages/SignIn";
 import Contact from "./pages/Contact";
 import Modal from "./components/Modal"
@@ -87,7 +88,9 @@ function App() {
       <>
         <Route path="/" element={<Root cart={cart} decrease={decreaseQuantity} increase={addOnCart}/>}>
           <Route index element={<Home />} />
-          <Route  path="/shop" element={<Shop addOnCart={addOnCart} isModalOpen={isModalOpen} getCurrent={getCurrent}/>} />
+          <Route  path="/shop" element={<Shop addOnCart={addOnCart} isModalOpen={isModalOpen} getCurrent={getCurrent}/>}>
+            <Route path=":categoryName" element={<Category products={SHOP_DATA} addOnCart={addOnCart} isModalOpen={isModalOpen} getCurrent={getCurrent}/>} />
+          </Route>
           <Route  path="/login" element={<SignIn />} />
           <Route  path="/contact" element={<Contact />} />
           <Route  path="/checkout" element={<Checkout />} />
