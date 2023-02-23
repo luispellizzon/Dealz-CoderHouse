@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { CartContext } from "../context/CartContext";
 
-const CartItem = ({ cartItem, increase, decrease }) => {
+const CartItem = ({ cartItem}) => {
     const { name, price, imageUrl, quantity } = cartItem;
+    const {addOnCart, decreaseQuantity} = useContext(CartContext);
+    const addQuantity = () => addOnCart(cartItem);
+    const removeQuantity = () => decreaseQuantity(cartItem)
 
   
     return (
@@ -14,13 +19,13 @@ const CartItem = ({ cartItem, increase, decrease }) => {
           <span className="flex items-center"> 
             <div className="flex items-center">
               <button className="active:scale-75"
-              onClick={() => decrease(cartItem)}
+              onClick={() => addQuantity}
               >
                 <FaChevronLeft/>
               </button>
               <p className="text-lg"> {quantity}</p>
               <button className={quantity === 5 ? "text-gray-400" : "active:scale-75"} 
-              onClick={() => increase(cartItem)}
+              onClick={() => removeQuantity}
               >
                 <FaChevronRight />
               </button>

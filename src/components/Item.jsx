@@ -1,13 +1,18 @@
 
 import { TbListDetails } from 'react-icons/tb';
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 
-const Item = ({ item, addOnCart, isModalOpen, getCurrent }) => {
+const Item = ({ item,isModalOpen, getCurrent }) => {
   const { id, name, price, imageUrl } = item;
+  const {addOnCart} = useContext(CartContext)
+  const addProduct = () =>  addOnCart(item)
 
   const showItem = () => {
     isModalOpen();
     getCurrent(item)
   };
+
   
 
   return (
@@ -32,7 +37,7 @@ const Item = ({ item, addOnCart, isModalOpen, getCurrent }) => {
         <button
           type="button"
           className="w-full bg-slate-900 px-2 py-1 rounded text-amber-50"
-          onClick={()=> addOnCart(item)}
+          onClick={addProduct}
         >
           ADD TO CART
         </button>

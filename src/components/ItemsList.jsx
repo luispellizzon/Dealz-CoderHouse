@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 
 // SwiperCore.use([Mousewheel]);
 
-const ItemsList = ({ productCategory, addOnCart, isModalOpen, getCurrent }) => {
+const ItemsList = ({ productCategory, isModalOpen, getCurrent }) => {
   const { title, items } = productCategory;
 
   return (
@@ -54,7 +54,6 @@ const ItemsList = ({ productCategory, addOnCart, isModalOpen, getCurrent }) => {
           <SwiperSlide key={item.id}  className="flex items-center justify-center px-2 h-full">
             <Item 
             item={item} 
-            addOnCart={addOnCart} 
             isModalOpen={isModalOpen}
             getCurrent={getCurrent} />
           </SwiperSlide>

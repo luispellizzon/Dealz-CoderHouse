@@ -4,7 +4,7 @@ import Cart from "./Cart";
 import Logo from "../assets/logo.svg";
 import { motion } from "framer-motion";
 
-const NavBar = ({cart, increase, decrease}) =>{
+const NavBar = () =>{
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuRef = useRef();
   
@@ -80,7 +80,7 @@ const NavBar = ({cart, increase, decrease}) =>{
             )}
           </div>
           {/* <Cart /> */}
-                <Cart increase={increase} cart={cart} decrease={decrease}/>
+                <Cart/>
         </div>
       </nav>
     )
