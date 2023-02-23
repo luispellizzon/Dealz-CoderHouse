@@ -25,9 +25,9 @@ const NavBar = () =>{
     return (
         <nav className="container flex justify-between items-center px-10 pt-10 pb-5 mx-auto border-b-2 border-black min-w-full md:min-w-max">
         <div className="translate-x-[-1rem]">
-          <a href="/">
+          <Link to="/">
             <img src={Logo} alt="" />
-          </a>
+          </Link>
         </div>
         <div className="flex gap-5">
           {/* Desktop menu */}
