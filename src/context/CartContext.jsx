@@ -15,7 +15,7 @@ import { createContext, useState, useEffect } from "react";
       }
     );
     }
-    console.log([...cartItems, { ...productToAdd, quantity: 1 }])
+    
     /* Return an Array to be added on SetCart*/
     return [...cartItems, { ...productToAdd, quantity: 1 }];
   };  
@@ -62,18 +62,16 @@ export const CartProvider = ({children}) =>{
         const newCount = cartItems.reduce((prev, curr) => prev + curr.quantity, 0);
         setQuantityItems(newCount);
         setTotalPrice(calculateTotal(cartItems));
-        console.log(quantityItems)
+        
       }, [cartItems]);
 
 
     /*Function to Add a Product to Cart, But First Check If Item Exist (returning an array) and SET CART*/
     const addOnCart = (productToAdd) => {
         setCartItems(addCartItem(cartItems, productToAdd));
-        console.log("added")
+        
     };
 
-
-  
     /*Function to Decrease Quantity of a Product*/
     const decreaseQuantity = (productToDecrease) =>{
         setCartItems(deleteQuantityFromItem(cartItems, productToDecrease));
