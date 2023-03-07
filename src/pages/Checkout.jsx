@@ -1,6 +1,11 @@
-const Checkout =()=>{
-return <h1>Checkout</h1>
-}
+import CheckoutContainer from "../components/CheckoutContainer";
 
+const Checkout = () => {
+  return (
+    <>
+      <CheckoutContainer />
+    </>
+  );
+};
 
 export default Checkout;

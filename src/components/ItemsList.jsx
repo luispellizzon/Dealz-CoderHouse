@@ -1,10 +1,8 @@
 import Item from "./Item";
-import SwiperCore, { Navigation, A11y, Mousewheel } from "swiper";
+import { Navigation, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-
-// SwiperCore.use([Mousewheel]);
 
 const ItemsList = ({ productCategory, isModalOpen, getCurrent }) => {
   const { title, items } = productCategory;
@@ -51,11 +49,15 @@ const ItemsList = ({ productCategory, isModalOpen, getCurrent }) => {
         className="pb-8"
       >
         {items.map((item) => (
-          <SwiperSlide key={item.id}  className="flex items-center justify-center px-2 h-full">
-            <Item 
-            item={item} 
-            isModalOpen={isModalOpen}
-            getCurrent={getCurrent} />
+          <SwiperSlide
+            key={item.id}
+            className="flex items-center justify-center px-2 h-full"
+          >
+            <Item
+              item={item}
+              isModalOpen={isModalOpen}
+              getCurrent={getCurrent}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
