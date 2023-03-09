@@ -1,13 +1,13 @@
 import { useContext } from "react";
-import { ProductContext } from "../context/ProductContext";
+import { CategoryContext, ProductContext } from "../context/CategoryContext";
 import ItemsList from "./ItemsList";
 
 const ItemListContainer = ({ isModalOpen, getCurrent }) => {
-  const { products } = useContext(ProductContext);
+  const { categoryMap } = useContext(CategoryContext);
 
   return (
     <div className="container mx-auto">
-      {products.map((category) => (
+      {categoryMap.map((category) => (
         <ItemsList
           key={category.title}
           productCategory={category}

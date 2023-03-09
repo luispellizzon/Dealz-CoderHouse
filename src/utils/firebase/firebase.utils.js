@@ -1,5 +1,11 @@
 import { initializeApp } from "firebase/app";
-import { collection, writeBatch, getFirestore, doc } from "firebase/firestore";
+import {
+  collection,
+  writeBatch,
+  getFirestore,
+  query,
+  getDocs,
+} from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -28,3 +34,18 @@ const db = getFirestore();
 //   await batch.commit();
 //   console.log("Write Done");
 // };
+
+export const getCategoriesAndDocuments = async () => {
+  const collectionRef = collection(db, "categories");
+  const q = query(collectionRef);
+  const querySnapshot = await getDocs(q);
+  // console.log(querySnapshot.docs.map((snapshot) => snapshot.data()));
+
+  const categoryMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
+    const { title, items } = docSnapshot.data();
+    acc[title.toLowerCase()] = items;
+    return acc;
+  }, {});
+
+  return categoryMap;
+};
