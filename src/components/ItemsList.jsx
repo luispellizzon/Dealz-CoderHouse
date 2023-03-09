@@ -4,12 +4,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const ItemsList = ({ productCategory, isModalOpen, getCurrent }) => {
-  const { title, items } = productCategory;
+const ItemsList = ({ productTitle, productItems, isModalOpen, getCurrent }) => {
+  console.log(productItems);
 
   return (
     <div className="mt-10 mb-5">
-      <h1 className="text-align text-3xl font-bold px-4">{title}</h1>
+      <h1 className="text-align text-3xl font-bold px-4 uppercase">
+        {productTitle}
+      </h1>
       <hr className="mb-4" />
       <Swiper
         // install Swiper modules
@@ -48,7 +50,7 @@ const ItemsList = ({ productCategory, isModalOpen, getCurrent }) => {
         }}
         className="pb-8"
       >
-        {items.map((item) => (
+        {productItems.map((item) => (
           <SwiperSlide
             key={item.id}
             className="flex items-center justify-center px-2 h-full"

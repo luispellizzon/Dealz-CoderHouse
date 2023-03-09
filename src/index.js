@@ -4,15 +4,15 @@ import "./input.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { CartProvider } from "./context/CartContext";
-import { ProductProvider } from "./context/CategoryContext";
+import { CategoryProvider } from "./context/CategoryContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <ProductProvider>
+  <CategoryProvider>
     <CartProvider>
       <App />
     </CartProvider>
-  </ProductProvider>
+  </CategoryProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
