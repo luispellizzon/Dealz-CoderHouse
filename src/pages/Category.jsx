@@ -1,25 +1,25 @@
 import { useParams } from "react-router-dom";
+import { useContext } from "react";
 import ItemsList from "../components/ItemsList";
+import { CategoryContext } from "../context/CategoryContext";
 
-const Category = ({ products = [], addOnCart, isModalOpen, getCurrent }) => {
+const Category = ({ addOnCart, isModalOpen, getCurrent }) => {
   const { categoryName } = useParams();
-
-  const category = products.filter(
-    (category) => category.title.toLowerCase() === categoryName
-  )[0];
+  const { categoriesMap } = useContext(CategoryContext);
+  console.log(categoriesMap);
 
   return (
     <>
-      <section id={category.title}>
+      <section id={categoryName}>
         <h1 className="text-center text-slate-900 text-3xl font-bold uppercase p-4">
-          {category.title} Products
+          {categoryName} Products
         </h1>
         <div className="container mx-auto pb-4">
           <hr className="border" />
         </div>
         <ItemsList
-          productTitle={category.title}
-          productItems={category.items}
+          productTitle={categoryName}
+          productItems={categoriesMap[categoryName]}
           addOnCart={addOnCart}
           isModalOpen={isModalOpen}
           getCurrent={getCurrent}

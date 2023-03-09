@@ -4,7 +4,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const ItemsList = ({ productTitle, productItems, isModalOpen, getCurrent }) => {
+const ItemsList = ({
+  productTitle,
+  productItems = [],
+  isModalOpen,
+  getCurrent,
+}) => {
   console.log(productItems);
 
   return (

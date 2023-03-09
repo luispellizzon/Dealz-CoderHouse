@@ -6,7 +6,6 @@ import {
   Route,
   Outlet,
 } from "react-router-dom";
-import SHOP_DATA from "./data/shopitems-data";
 import NavBar from "./components/NavBar";
 import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
@@ -61,11 +60,7 @@ function App() {
             <Route
               path=":categoryName"
               element={
-                <Category
-                  products={SHOP_DATA}
-                  isModalOpen={isModalOpen}
-                  getCurrent={getCurrent}
-                />
+                <Category isModalOpen={isModalOpen} getCurrent={getCurrent} />
               }
             />
           </Route>
