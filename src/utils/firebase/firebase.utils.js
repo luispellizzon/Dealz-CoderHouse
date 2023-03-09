@@ -15,13 +15,16 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 
-const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
-  const collectionRef = collection(db, collectionKey);
-  const batch = writeBatch(db);
-  objectsToAdd.forEach((object) => {
-    const docRef = doc(collectionRef, object.title.toLowerCase());
-    batch.set(docRef, object);
-  });
-  await batch.commit();
-  console.log("Write Done");
-};
+// export const addCollectionAndDocuments = async (
+//   collectionKey,
+//   objectsToAdd
+// ) => {
+//   const collectionRef = collection(db, collectionKey);
+//   const batch = writeBatch(db);
+//   objectsToAdd.forEach((object) => {
+//     const docRef = doc(collectionRef, object.title.toLowerCase());
+//     batch.set(docRef, object);
+//   });
+//   await batch.commit();
+//   console.log("Write Done");
+// };

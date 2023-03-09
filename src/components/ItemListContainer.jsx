@@ -1,7 +1,10 @@
-import React from "react";
+import { useContext } from "react";
+import { ProductContext } from "../context/ProductContext";
 import ItemsList from "./ItemsList";
 
-const ItemListContainer = ({ products = [], isModalOpen, getCurrent }) => {
+const ItemListContainer = ({ isModalOpen, getCurrent }) => {
+  const { products } = useContext(ProductContext);
+
   return (
     <div className="container mx-auto">
       {products.map((category) => (
