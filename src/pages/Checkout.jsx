@@ -1,11 +1,10 @@
+import { Outlet, useParams } from "react-router-dom";
 import CheckoutContainer from "../components/CheckoutContainer";
 
 const Checkout = () => {
-  return (
-    <>
-      <CheckoutContainer />
-    </>
-  );
+  const { orderId } = useParams();
+
+  return <>{orderId ? <Outlet /> : <CheckoutContainer />}</>;
 };
 
 export default Checkout;

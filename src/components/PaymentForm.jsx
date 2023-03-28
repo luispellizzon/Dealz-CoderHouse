@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { OrderContext } from "../context/OrderContext";
+import { CartContext } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 const PaymentForm = () => {
+  const { buyer, setOrderBuyer } = useContext(OrderContext);
+
   const [form, setForm] = useState({
-    displayName: "",
-    email: "",
-    phoneNumber: "",
+    userName: buyer?.userName || "",
+    email: buyer?.email || "",
+    phoneNumber: buyer?.phoneNumber || "",
   });
 
-  const { displayName, email, phoneNumber } = form;
+  const { userName, email, phoneNumber } = form;
+
+  const navigate = useNavigate();
 
   /* Set form with userDetails accordingly*/
   const handleOnChange = (e) => {
@@ -18,8 +25,10 @@ const PaymentForm = () => {
   };
 
   /* When user submit form */
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
+    setOrderBuyer(form);
+    navigate("/checkout");
   };
   return (
     <div>
@@ -35,15 +44,15 @@ const PaymentForm = () => {
               </h1>
 
               <div className="flex flex-col gap-2 min-w-full mb-6">
-                <label htmlFor="displayName" className="text-amber-50">
+                <label htmlFor="userName" className="text-amber-50">
                   Name
                 </label>
                 <input
                   className="p-2 w-full rounded-md border-black border-x border-y"
                   type="text"
-                  name="displayName"
-                  id="displayName"
-                  value={displayName}
+                  name="userName"
+                  id="userName"
+                  value={userName}
                   placeholder="Name..."
                   onChange={handleOnChange}
                   required

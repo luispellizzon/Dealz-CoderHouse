@@ -14,6 +14,7 @@ import Category from "./pages/Category";
 import SignIn from "./pages/SignIn";
 import Contact from "./pages/Contact";
 import Payment from "./pages/Payment";
+import OrderProcessed from "./pages/OrderProcessed";
 import Modal from "./components/Modal";
 
 const Root = ({ showModal, isModalOpen, showCurrentItem }) => {
@@ -67,7 +68,9 @@ function App() {
           </Route>
           <Route path="/login" element={<SignIn />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/checkout" element={<Checkout />}>
+            <Route path=":orderId" element={<OrderProcessed />} />
+          </Route>
           <Route path="/payment" element={<Payment />} />
         </Route>
       </>
