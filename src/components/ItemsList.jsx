@@ -10,8 +10,6 @@ const ItemsList = ({
   isModalOpen,
   getCurrent,
 }) => {
-  console.log(productItems);
-
   return (
     <div className="mt-10 mb-5">
       <h1 className="text-align text-3xl font-bold px-4 uppercase">

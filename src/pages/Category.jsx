@@ -6,7 +6,6 @@ import { CategoryContext } from "../context/CategoryContext";
 const Category = ({ addOnCart, isModalOpen, getCurrent }) => {
   const { categoryName } = useParams();
   const { categoriesMap } = useContext(CategoryContext);
-  console.log(categoriesMap);
 
   return (
     <>
@@ -20,7 +19,6 @@ const Category = ({ addOnCart, isModalOpen, getCurrent }) => {
         <ItemsList
           productTitle={categoryName}
           productItems={categoriesMap[categoryName]}
-          addOnCart={addOnCart}
           isModalOpen={isModalOpen}
           getCurrent={getCurrent}
         />
