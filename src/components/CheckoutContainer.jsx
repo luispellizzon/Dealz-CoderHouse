@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import CheckoutItem from "./CheckoutItem";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const CheckoutContainer = () => {
   const { cartItems } = useContext(CartContext);
@@ -35,9 +36,12 @@ const CheckoutContainer = () => {
             <span className="text-2xl">{total}€</span>
           </div>
 
-          <button className="py-3 bg-slate-900 text-amber-50 rounded mx-auto w-[75%] active:scale-[99%]">
+          <Link
+            to="/payment"
+            className="py-3 bg-slate-900 text-amber-50 rounded mx-auto w-[75%] active:scale-[99%]"
+          >
             Go to Payment
-          </button>
+          </Link>
         </div>
       </div>
     </section>

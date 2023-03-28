@@ -13,6 +13,7 @@ import Shop from "./pages/Shop";
 import Category from "./pages/Category";
 import SignIn from "./pages/SignIn";
 import Contact from "./pages/Contact";
+import Payment from "./pages/Payment";
 import Modal from "./components/Modal";
 
 const Root = ({ showModal, isModalOpen, showCurrentItem }) => {
@@ -67,6 +68,7 @@ function App() {
           <Route path="/login" element={<SignIn />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/payment" element={<Payment />} />
         </Route>
       </>
     )
