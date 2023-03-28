@@ -1,12 +1,13 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 
 const PaymentForm = () => {
   const [form, setForm] = useState({
     displayName: "",
     email: "",
+    phoneNumber: "",
   });
+
+  const { displayName, email, phoneNumber } = form;
 
   /* Set form with userDetails accordingly*/
   const handleOnChange = (e) => {
@@ -60,6 +61,21 @@ const PaymentForm = () => {
                   id="email"
                   value={email}
                   placeholder="Email..."
+                  onChange={handleOnChange}
+                  required
+                />
+              </div>
+              <div className="flex flex-col gap-2 min-w-full mb-6">
+                <label htmlFor="email" className="text-amber-50">
+                  Phone Number
+                </label>
+                <input
+                  className="p-2 w-full rounded-md border-black border-x border-y"
+                  type="number"
+                  name="phoneNumber"
+                  id="phoneNumber"
+                  value={phoneNumber}
+                  placeholder="Phone Number.."
                   onChange={handleOnChange}
                   required
                 />
