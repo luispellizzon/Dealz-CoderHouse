@@ -39,9 +39,6 @@ const NavBar = () => {
             <li>
               <Link to="/checkout">Checkout</Link>
             </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
           </ul>
         </div>
 
@@ -66,17 +63,24 @@ const NavBar = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="menu-mobile absolute top-10 right-0 bg-white border-black border-[1px] rounded py-2 z-30"
+              className="menu-mobile absolute top-10 right-0 bg-white border-black border-[1px] rounded z-30"
             >
-              <ul className="flex flex-col space-y-4 py-2 text-center">
-                <li className="border-b-black border-b-[1px] px-4 pb-3 uppercase">
-                  <Link to="/shop">Shop</Link>
+              <ul className="flex flex-col text-center uppercase font-bold">
+                <li className="border-b-black border-b-[0.5px]">
+                  <Link
+                    to="/shop"
+                    className="p-4 block hover:bg-amber-100 rounded"
+                  >
+                    Shop
+                  </Link>
                 </li>
-                <li className="border-b-black border-b-[1px] px-4 pb-4 uppercase">
-                  <Link to="/checkout">Checkout</Link>
-                </li>
-                <li className="px-4 uppercase">
-                  <Link to="/contact">Contact</Link>
+                <li>
+                  <Link
+                    to="/checkout"
+                    className="p-4 block hover:bg-amber-100 rounded"
+                  >
+                    Checkout
+                  </Link>
                 </li>
               </ul>
             </motion.div>
