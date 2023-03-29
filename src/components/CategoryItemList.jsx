@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function CategoryItemList({ categoryName, id, imageUrl }) {
   const navigate = useNavigate();
@@ -9,14 +9,14 @@ function CategoryItemList({ categoryName, id, imageUrl }) {
         className="absolute w-full h-full transition-all duration-100 ease-in-out bg-no-repeat bg-center bg-cover"
         style={{ backgroundImage: `url(${imageUrl})` }}
       ></div>
-      <a
+      <div
         className="flex flex-col gap-3 text-center z-10 bg-white border-2 border-slate-900 opacity-80 py-2 px-5"
         tabIndex="0"
         onClick={() => navigate(`/shop/${categoryName.toLowerCase()}`)}
       >
         <h2 className="text-xl font-normal">{categoryName}</h2>
         <p className="text-sm font-extralight">Shop Now</p>
-      </a>
+      </div>
     </div>
   );
 }

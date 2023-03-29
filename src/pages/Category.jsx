@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { useContext } from "react";
 import ItemsList from "../components/ItemsList";
 import { CategoryContext } from "../context/CategoryContext";
@@ -9,6 +10,9 @@ const Category = ({ addOnCart, isModalOpen, getCurrent }) => {
 
   return (
     <>
+      <Helmet>
+        <title>{categoryName.toUpperCase()} | Dealz</title>
+      </Helmet>
       <section id={categoryName}>
         <h1 className="text-center text-slate-900 text-3xl font-bold uppercase p-4">
           {categoryName} Products

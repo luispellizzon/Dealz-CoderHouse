@@ -1,6 +1,5 @@
 import { useState, useContext } from "react";
 import { OrderContext } from "../context/OrderContext";
-import { CartContext } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
 
 const UserDetailsForm = () => {

@@ -23,7 +23,7 @@ const Item = ({ item, isModalOpen, getCurrent }) => {
             onClick={() => showItem()}
           >
             <TbListDetails className=" font-bold bg-slate-900 text-amber-50 rounded" />{" "}
-            Ver Detalhes
+            Description
           </button>
         </div>
       </div>

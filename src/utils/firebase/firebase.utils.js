@@ -6,6 +6,8 @@ import {
   query,
   addDoc,
   getDocs,
+  doc,
+  getDoc,
 } from "firebase/firestore";
 
 // Your web app's Firebase configuration
@@ -57,4 +59,21 @@ export const createOrderOnFirebase = async (orderObj) => {
   const orderCollection = collection(db, "orders");
   const docAdded = await addDoc(orderCollection, order);
   return docAdded;
+};
+
+export const getOrderFromFirestore = async (docId) => {
+  const orderCollection = collection(db, "orders");
+
+  const snapshot = await getDoc(doc(orderCollection, docId));
+
+  try {
+    if (snapshot.exists()) {
+      return true;
+    } else {
+      throw new Error("Document not found");
+    }
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
 };

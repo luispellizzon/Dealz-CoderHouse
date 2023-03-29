@@ -11,7 +11,6 @@ import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Category from "./pages/Category";
-import SignIn from "./pages/SignIn";
 import Payment from "./pages/Payment";
 import OrderProcessed from "./pages/OrderProcessed";
 import Modal from "./components/Modal";
@@ -65,7 +64,6 @@ function App() {
               }
             />
           </Route>
-          <Route path="/login" element={<SignIn />} />
           <Route path="/checkout" element={<Checkout />}>
             <Route path=":orderId" element={<OrderProcessed />} />
           </Route>
