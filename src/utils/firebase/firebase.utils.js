@@ -4,6 +4,7 @@ import {
   writeBatch,
   getFirestore,
   query,
+  addDoc,
   getDocs,
 } from "firebase/firestore";
 
@@ -48,4 +49,12 @@ export const getCategoriesAndDocuments = async () => {
   }, {});
 
   return categoryMap;
+};
+
+/* CREATE ORDER COLLECTION */
+export const createOrderOnFirebase = async (orderObj) => {
+  const order = { ...orderObj };
+  const orderCollection = collection(db, "orders");
+  const docAdded = await addDoc(orderCollection, order);
+  return docAdded;
 };

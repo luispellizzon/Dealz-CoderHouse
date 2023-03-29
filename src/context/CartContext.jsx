@@ -65,6 +65,7 @@ export const CartContext = createContext({
   setQuantityItems: () => {},
   setTotalPrice: () => {},
   setCartItems: () => {},
+  cleanCart: () => {},
 });
 
 export const CartProvider = ({ children }) => {
@@ -81,6 +82,10 @@ export const CartProvider = ({ children }) => {
   /*Function to Add a Product to Cart, But First Check If Item Exist (returning an array) and SET CART*/
   const addOnCart = (productToAdd) => {
     setCartItems(addCartItem(cartItems, productToAdd));
+  };
+
+  const cleanCart = () => {
+    setCartItems([]);
   };
 
   /*Function to Decrease Quantity of a Product*/
@@ -100,6 +105,7 @@ export const CartProvider = ({ children }) => {
     decreaseQuantity,
     removeProduct,
     calculateTotal,
+    cleanCart,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

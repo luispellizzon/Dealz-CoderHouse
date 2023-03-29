@@ -2,24 +2,46 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { OrderContext } from "../context/OrderContext";
 import CheckoutItem from "./CheckoutItem";
+import { createOrderOnFirebase } from "../utils/firebase/firebase.utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { FaSadCry } from "react-icons/fa";
 
 const CheckoutContainer = () => {
   const navigate = useNavigate();
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, cleanCart } = useContext(CartContext);
   const { buyer, setOrderItems, setTotalPrice } = useContext(OrderContext);
-  const total = cartItems?.reduce(
+  const totalPrice = cartItems?.reduce(
     (acc, item) => acc + item.quantity * item.price,
     0
   );
 
+  const items = cartItems.map((item) => {
+    return {
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      quantity: item.quantity,
+    };
+  });
+
   const submitOrder = async () => {
-    setOrderItems(cartItems);
-    setTotalPrice(total);
-    const id = 1234;
-    navigate("/checkout/" + id);
+    setOrderItems(items);
+    setTotalPrice(totalPrice);
+    const order = await createOrder({
+      buyer,
+      items: items,
+      total: totalPrice,
+      date: new Date(),
+    });
+    cleanCart();
+    navigate("/checkout/" + order.id);
+  };
+
+  const createOrder = async (orderObj) => {
+    const orderDetails = { ...orderObj };
+    const orderCreated = await createOrderOnFirebase(orderDetails);
+    return orderCreated;
   };
 
   return (
@@ -46,7 +68,7 @@ const CheckoutContainer = () => {
               <hr />
               <div className="flex justify-between pr-6 uppercase font-bold">
                 <p className="text-2xl pl-10 ">Total:</p>
-                <span className="text-2xl">{total}€</span>
+                <span className="text-2xl">{totalPrice}€</span>
               </div>
               <hr />
               {buyer && (
@@ -77,14 +99,13 @@ const CheckoutContainer = () => {
 
               <Link
                 to="/payment"
-                className="py-3 bg-slate-900 text-amber-50 rounded mx-auto w-[75%] active:scale-[99%] font-bold"
+                className="py-3 bg-slate-900 hover:bg-slate-700 text-amber-50 rounded mx-auto w-[75%] active:scale-[99%] font-bold"
               >
                 {buyer ? "Change Your Details" : "Add Your Details"}
               </Link>
               {buyer && (
                 <button
-                  to="/payment"
-                  className="py-3 bg-green-500 text-amber-50 rounded mx-auto w-[75%] active:scale-[99%] font-bold"
+                  className="py-3 bg-green-500 hover:bg-green-400 text-amber-50 rounded mx-auto w-[75%] active:scale-[99%] font-bold"
                   onClick={submitOrder}
                 >
                   Confirm Order

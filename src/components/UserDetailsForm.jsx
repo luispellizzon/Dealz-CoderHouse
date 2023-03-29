@@ -3,7 +3,7 @@ import { OrderContext } from "../context/OrderContext";
 import { CartContext } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
 
-const PaymentForm = () => {
+const UserDetailsForm = () => {
   const { buyer, setOrderBuyer } = useContext(OrderContext);
 
   const [form, setForm] = useState({
@@ -91,7 +91,7 @@ const PaymentForm = () => {
               </div>
 
               <input
-                className="min-w-full mt-4 rounded-md bg-amber-50 font-semibold text-slate-900 uppercase py-4 hover:cursor-pointer hover:bg-slate-200 active:scale-95"
+                className="min-w-full mt-4 rounded-md bg-amber-50 font-semibold text-slate-900 uppercase py-4 hover:cursor-pointer hover:bg-amber-200 active:scale-95"
                 type="submit"
                 value="Submit"
               />
@@ -103,4 +103,4 @@ const PaymentForm = () => {
   );
 };
 
-export default PaymentForm;
+export default UserDetailsForm;

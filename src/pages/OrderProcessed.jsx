@@ -1,5 +1,6 @@
+import OrderConfirmation from "../components/OrderConfirmation";
 const OrderProcessed = () => {
-  return <div>Order Processed</div>;
+  return <OrderConfirmation />;
 };
 
 export default OrderProcessed;

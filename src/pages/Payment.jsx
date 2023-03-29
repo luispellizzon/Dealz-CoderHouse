@@ -1,7 +1,7 @@
-import PaymentForm from "../components/PaymentForm";
+import UserDetailsForm from "../components/UserDetailsForm";
 
 const Payment = () => {
-  return <PaymentForm />;
+  return <UserDetailsForm />;
 };
 
 export default Payment;

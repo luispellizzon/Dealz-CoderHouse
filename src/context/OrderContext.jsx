@@ -26,6 +26,12 @@ export const OrderProvider = ({ children }) => {
     setTotal(price);
   };
 
+  const resetOrderDetails = () => {
+    setBuyer(null);
+    setItems([]);
+    setTotal(0);
+  };
+
   const value = {
     buyer,
     items,
@@ -33,6 +39,7 @@ export const OrderProvider = ({ children }) => {
     setOrderBuyer,
     setOrderItems,
     setTotalPrice,
+    resetOrderDetails,
   };
 
   return (
