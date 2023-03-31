@@ -1,4 +1,5 @@
 <h1><strong>Dealz E-commerce Website</strong></h1>
+<p>Link: <a href="https://dealz-ecommerce.vercel.app/">Live Demo Here!</a></p>
 
 <h3>Project Description:</h3>
 <p>This project was proposed by Coderhouse's React Course. The idea of the project was to build a simple e-commerce website using ReactJs and Google Firebase.</p>
